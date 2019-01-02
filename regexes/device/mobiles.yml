@@ -8137,7 +8137,6 @@ ZTE:
       model: 'Axon 7 Mini'
     - regex: 'Z667T'
       model: 'Zinger'
-
     - regex: 'AxonPhone ([^;/]+) Build'
       model: 'AxonPhone $1'
     - regex: '([a-z0-9]+)_USA_Cricket'

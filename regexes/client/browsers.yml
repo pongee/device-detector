@@ -5,6 +5,82 @@
 # @license http://www.gnu.org/licenses/lgpl.html LGPL v3 or later
 ###############
 
+# Hawk Turbo Browser
+- regex: 'Hawk/TurboBrowser(?:/v?(\d+[\.\d]+))?'
+  name: 'Hawk Turbo Browser'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# FreeU (https://freeu.online/)
+- regex: 'FreeU(?:/(\d+[\.\d]+))?'
+  name: 'FreeU'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# Nox Browser (https://play.google.com/store/apps/details?id=com.noxgroup.app.browser)
+- regex: 'NoxBrowser(?:/(\d+[\.\d]+))?'
+  name: 'Nox Browser'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# Basilisk (https://www.basilisk-browser.org/)
+- regex: 'Basilisk(?:/(\d+[\.\d]+))?'
+  name: 'Basilisk'
+  version: '$1'
+  engine:
+    default: 'Gecko'
+
+# Sputnik Browser (https://play.google.com/store/apps/details?id=ru.sputnik.browser)
+- regex: 'SputnikBrowser(?:/(\d+[\.\d]+))?'
+  name: 'Sputnik Browser'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# K.Browser (https://play.google.com/store/apps/details?id=com.tnsua.browser)
+- regex: 'TNSBrowser(?:/(\d+[\.\d]+))?'
+  name: 'K.Browser'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# Oculus Browser (https://developer.oculus.com/documentation/oculus-browser/latest/concepts/)
+- regex: 'OculusBrowser(?:/(\d+[\.\d]+))?'
+  name: 'Oculus Browser'
+  version: '$1'
+
+# Jio Browser (https://play.google.com/store/apps/details?id=com.jio.web)
+- regex: 'JioBrowser(?:/(\d+[\.\d]+))?'
+  name: 'Jio Browser'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# hola! Browser (https://hola.org/browser)
+- regex: 'Hola(?:/(\d+[\.\d]+))?'
+  name: 'hola! Browser'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# Huawei Browser
+- regex: 'HuaweiBrowser(?:/(\d+[\.\d]+))?'
+  name: 'Huawei Browser'
+  version: '$1'
+
+# vivo Browser
+- regex: 'VivoBrowser(?:/(\d+[\.\d]+))?'
+  name: 'vivo Browser'
+  version: '$1'
+
+# Realme Browser
+- regex: 'RealmeBrowser(?:/(\d+[\.\d]+))?'
+  name: 'Realme Browser'
+  version: '$1'
+
 # Beaker distributed web browser (https://beakerbrowser.com/)
 - regex: 'Beaker ?Browser(?:[/ ](\d+[\.\d]+))?'
   name: 'Beaker Browser'
@@ -124,7 +200,7 @@
   version: '$1'
 
 #Epic
-- regex: 'Epic(?:/(\d+[\.\d]+))?'
+- regex: 'Epic(?:/(\d+[\.\d]+))'
   name: 'Epic'
   version: '$1'
   engine:
@@ -287,6 +363,11 @@
     default: 'Gecko'
 
 #Firefox Mobile
+- regex: '(?:Mobile|Tablet).*Servo.*Firefox(?:/(\d+[\.\d]+))?'
+  name: 'Firefox Mobile'
+  version: '$1'
+  engine:
+    default: 'Servo'
 - regex: '(?:Mobile|Tablet).*Firefox(?:/(\d+[\.\d]+))?'
   name: 'Firefox Mobile'
   version: '$1'
@@ -299,6 +380,11 @@
     default: 'WebKit'
 
 #Firefox
+- regex: '.*Servo.*Firefox(?:/(\d+[\.\d]+))?'
+  name: 'Firefox'
+  version: '$1'
+  engine:
+    default: 'Servo'
 - regex: 'Firefox(?:/(\d+[\.\d]+))?'
   name: 'Firefox'
   version: '$1'
@@ -515,10 +601,17 @@
   name: 'Baidu Spark'
   version: '$1'
 
-#Yandex Browser
-- regex: 'YaBrowser(?:/(\d+[\.\d]*))?'
-  name: 'Yandex Browser'
+# Yandex Browser Lite
+- regex: 'YaBrowser(?:/(\d+[\.\d]*)) \(lite\)?'
+  name: 'Yandex Browser Lite'
   version: '$1'
+  engine:
+    default: 'Blink'
+
+#Yandex Browser
+- regex: 'YaBrowser(?:/(\d+[\.\d]*))(?: \((alpha|beta)\))?'
+  name: 'Yandex Browser'
+  version: '$1 $2'
   engine:
     default: 'Blink'
 
@@ -599,9 +692,9 @@
   name: 'LieBaoFast'
   version: '$1'
 
-# Liebao
+# Cheetah Browser
 - regex: 'LBBrowser(?:[ /](\d+[\.\d]+))?'
-  name: 'Liebao'
+  name: 'Cheetah Browser'
   version: '$1'
 
 # Sogou Explorer
@@ -642,6 +735,12 @@
     default: 'WebKit'
     versions:
       28: 'Blink'
+
+- regex: 'DuckDuckGo/(\d+[\.\d]*)'
+  name: 'DuckDuckGo Privacy Browser'
+  version: '$1'
+  engine:
+    default: 'Blink'
 
 #Samsung Browser
 - regex: 'Samsung ?Browser(?:[/ ](\d+[\.\d]+))?'
@@ -766,6 +865,43 @@
   version: '$1'
   engine:
     default: 'WebKit'
+
+#IBrowse
+- regex: 'IBrowse(?:[ /](\d+[\.\d]+))?'
+  name: 'IBrowse'
+  version: '$1'
+
+#Openwave Mobile Browser
+- regex: 'UP.Browser(?:/(\d+[\.\d]+))?'
+  name: 'Openwave Mobile Browser'
+  version: '$1'
+- regex: 'Openwave(?:/(\d+[\.\d]+))?'
+  name: 'Openwave Mobile Browser'
+  version: '$1'
+
+#ONE Browser
+- regex: 'OneBrowser(?:[ /](\d+[\.\d]+))?'
+  name: 'ONE Browser'
+  version: '$1'
+  engine:
+    default: 'WebKit'
+
+#Nokia Browser
+- regex: '(?:NokiaBrowser|BrowserNG)(?:/(\d+[\.\d]+))?'
+  name: 'Nokia Browser'
+  version: '$1'
+- regex: 'Series60/5\.0'
+  name: 'Nokia Browser'
+  version: '7.0'
+- regex: 'Series60/(\d+[\.\d]+)'
+  name: 'Nokia OSS Browser'
+  version: '$1'
+- regex: 'S40OviBrowser/(\d+[\.\d]+)'
+  name: 'Nokia Ovi Browser'
+  version: '$1'
+- regex: '^Nokia|Nokia[EN]?\d+'
+  name: 'Nokia Browser'
+  version: ''
 
 # Chrome Webview
 - regex: 'Version/.* Chrome(?:/(\d+[\.\d]+))?'
@@ -988,11 +1124,6 @@
   name: 'HotJava'
   version: '$1'
 
-#IBrowse
-- regex: 'IBrowse(?:[ /](\d+[\.\d]+))?'
-  name: 'IBrowse'
-  version: '$1'
-
 #iCabMobile
 - regex: 'iCabMobile(?:[ /](\d+[\.\d]+))?'
   name: 'iCab Mobile'
@@ -1101,14 +1232,6 @@
   name: 'LuaKit'
   version: '$1'
 
-#Openwave Mobile Browser
-- regex: 'UP.Browser(?:/(\d+[\.\d]+))?'
-  name: 'Openwave Mobile Browser'
-  version: '$1'
-- regex: 'Openwave(?:/(\d+[\.\d]+))?'
-  name: 'Openwave Mobile Browser'
-  version: '$1'
-
 #OmniWeb
 - regex: 'OmniWeb(?:/[v]?(\d+[\.\d]+))?'
   name: 'OmniWeb'
@@ -1155,13 +1278,6 @@
 - regex: 'OffByOne'
   name: 'Off By One'
   version: ''
-
-#ONE Browser
-- regex: 'OneBrowser(?:[ /](\d+[\.\d]+))?'
-  name: 'ONE Browser'
-  version: '$1'
-  engine:
-    default: 'WebKit'
 
 #Oregano
 - regex: 'Oregano(?:[ /](\d+[\.\d]+))?'
@@ -1233,23 +1349,6 @@
 - regex: 'Xiino(?:/(\d+[\.\d]+))?'
   name: 'Xiino'
   version: '$1'
-
-#Nokia Browser
-- regex: '(?:NokiaBrowser|BrowserNG)(?:/(\d+[\.\d]+))?'
-  name: 'Nokia Browser'
-  version: '$1'
-- regex: 'Series60/5\.0'
-  name: 'Nokia Browser'
-  version: '7.0'
-- regex: 'Series60/(\d+[\.\d]+)'
-  name: 'Nokia OSS Browser'
-  version: '$1'
-- regex: 'S40OviBrowser/(\d+[\.\d]+)'
-  name: 'Nokia Ovi Browser'
-  version: '$1'
-- regex: '^Nokia|Nokia[EN]?\d+'
-  name: 'Nokia Browser'
-  version: ''
 
 #BlackBerry Browser
 - regex: 'BlackBerry|PlayBook|BB10'

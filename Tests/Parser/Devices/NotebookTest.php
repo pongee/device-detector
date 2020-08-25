@@ -7,18 +7,18 @@
  */
 namespace DeviceDetector\Tests\Parser\Device;
 
-use DeviceDetector\Parser\Device\Console;
+use DeviceDetector\Parser\Device\Notebook;
 use \Spyc;
 use PHPUnit\Framework\TestCase;
 
-class ConsoleTest extends TestCase
+class NotebookTest extends TestCase
 {
     /**
      * @dataProvider getFixtures
      */
     public function testParse($useragent, $device)
     {
-        $consoleParser = new Console();
+        $consoleParser = new Notebook();
         $consoleParser->setUserAgent($useragent);
         $this->assertTrue($consoleParser->parse());
         $this->assertEquals($device['type'], $consoleParser->getDeviceType());
@@ -28,7 +28,7 @@ class ConsoleTest extends TestCase
 
     public function getFixtures()
     {
-        $fixtureData = \Spyc::YAMLLoad(realpath(dirname(__FILE__)) . '/fixtures/console.yml');
+        $fixtureData = \Spyc::YAMLLoad(realpath(dirname(__FILE__)) . '/fixtures/notebook.yml');
         return $fixtureData;
     }
 }

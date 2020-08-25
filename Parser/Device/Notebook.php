@@ -8,20 +8,20 @@
 namespace DeviceDetector\Parser\Device;
 
 /**
- * Class CarBrowser
+ * Class Notebook
  *
- * Device parser for car browser detection
+ * Device parser for notebook detection in Facebook useragents
  *
  * @package DeviceDetector\Parser\Device
  */
-class CarBrowser extends DeviceParserAbstract
+class Notebook extends DeviceParserAbstract
 {
-    protected $fixtureFile = 'regexes/device/car_browsers.yml';
-    protected $parserName  = 'car browser';
+    protected $fixtureFile = 'regexes/device/notebooks.yml';
+    protected $parserName  = 'notebook';
 
     public function parse()
     {
-        if (!$this->preMatchOverall()) {
+        if (!$this->matchUserAgent('FBMD/')) {
             return false;
         }
 
